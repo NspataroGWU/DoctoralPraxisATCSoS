@@ -1,0 +1,95 @@
+========================================================================
+H3 STATISTICAL ANALYSIS REPORT
+One-Way and Two-Way ANOVA -- Traffic Density x Update Frequency
+
+Spataro, N.D. (2026). System of Systems Integration Framework for
+Next-Generation Air Traffic Management. D.Eng. Praxis, GWU.
+
+Input  : C:\Users\nspat\Desktop\GWU\Praxis\simulation\results_ppo\h3_results.csv
+N total: 230 paired observations (9 cells)
+Alpha  : 0.05
+========================================================================
+
+SECTION 1: Shapiro-Wilk Normality Check (per cell)
+------------------------------------------------------------------------
+     Cell  N      W      p Normal (p>.05)
+ LOW_FAST 22 0.8511 0.0036             No
+  LOW_MID 22 0.5886 0.0000             No
+ LOW_SLOW 22 0.5327 0.0000             No
+BASE_FAST 24 0.7350 0.0000             No
+ BASE_MID 26 0.6694 0.0000             No
+BASE_SLOW 24 0.8141 0.0005             No
+HIGH_FAST 30 0.3513 0.0000             No
+ HIGH_MID 30 0.6635 0.0000             No
+HIGH_SLOW 30 0.8700 0.0017             No
+
+Note: CLT supports parametric ANOVA at n >= 30 per cell regardless
+of within-cell distribution shape.
+
+SECTION 2: Per-Cell Descriptive Statistics (Table 4-3)
+------------------------------------------------------------------------
+Density Freq  N  Mean %     SD    SE      t      p  Cohen's d     Sig
+    LOW FAST 22    -7.3 117.98 25.15 -0.290 0.7750      -0.06      ns
+    LOW  MID 22  -126.9 383.66 81.80 -1.551 0.1358      -0.33      ns
+    LOW SLOW 22   -46.7 295.09 62.91 -0.743 0.4659      -0.16      ns
+   BASE FAST 24    17.1 103.51 21.13  0.807 0.4277       0.16      ns
+   BASE  MID 26   -17.8 148.84 29.19 -0.609 0.5482      -0.12      ns
+   BASE SLOW 24    -9.4 124.86 25.49 -0.368 0.7163      -0.08      ns
+   HIGH FAST 30  -111.4 493.97 90.19 -1.235 0.2267      -0.23      ns
+   HIGH  MID 30   -92.5 227.35 41.51 -2.230 0.0337      -0.41 * p<.05
+   HIGH SLOW 30   -53.3 116.24 21.22 -2.512 0.0178      -0.46 * p<.05
+
+One-sample t-test: tests whether mean reduction differs from zero.
+Positive Mean % = AI reduces risk vs baseline.
+Negative Mean % = AI increases risk vs baseline.
+
+SECTION 3: One-Way ANOVA -- Main Effects
+------------------------------------------------------------------------
+  DENSITY       F(2,227) = 2.036  p = 0.1329  --> Not significant
+  FREQUENCY     F(2,227) = 0.544  p = 0.5813  --> Not significant
+
+Interpretation: Determines whether density or frequency alone
+constitutes a statistically significant performance moderator.
+
+SECTION 4: Two-Way ANOVA -- Full Factorial (Type II SS)
+------------------------------------------------------------------------
+                          sum_sq     df       F  PR(>F)
+C(density)          2.843798e+05    2.0  2.0488  0.1313
+C(freq)             8.060224e+04    2.0  0.5807  0.5604
+C(density):C(freq)  1.517734e+05    4.0  0.5467  0.7016
+Residual            1.533775e+07  221.0     NaN     NaN
+
+  Interaction (density x freq):  F(4,221) = 0.547  p = 0.7016  --> Not significant
+
+Interpretation: Tests whether the joint density x frequency
+condition produces effects beyond what each factor contributes
+independently.
+
+SECTION 5: Tukey HSD Post-Hoc -- Interaction Cell Pairs
+------------------------------------------------------------------------
+Tukey HSD not run: interaction not significant (p >= 0.05)
+
+SECTION 6: Summary Statistics for Paper
+------------------------------------------------------------------------
+
+USE THESE VALUES to update Tables 4-3 and 4-4 and all H3 narrative:
+
+ONE-WAY ANOVA RESULTS (Table 4-4):
+  Density       F(2,227) = 2.036, p = 0.1329  -- Not significant
+  Frequency     F(2,227) = 0.544, p = 0.5813  -- Not significant
+
+TWO-WAY ANOVA INTERACTION:
+  F(4,221) = 0.547, p = 0.7016  -- Not significant
+
+CELL MEANS FOR TABLE 4-3:
+  LOW_FAST    N=22  Mean=   -7.3%  p=0.7750  ns
+  LOW_MID     N=22  Mean= -126.9%  p=0.1358  ns
+  LOW_SLOW    N=22  Mean=  -46.7%  p=0.4659  ns
+  BASE_FAST    N=24  Mean=   17.1%  p=0.4277  ns
+  BASE_MID     N=26  Mean=  -17.8%  p=0.5482  ns
+  BASE_SLOW    N=24  Mean=   -9.4%  p=0.7163  ns
+  HIGH_FAST    N=30  Mean= -111.4%  p=0.2267  ns
+  HIGH_MID     N=30  Mean=  -92.5%  p=0.0337  * p<.05
+  HIGH_SLOW    N=30  Mean=  -53.3%  p=0.0178  * p<.05
+
+========================================================================

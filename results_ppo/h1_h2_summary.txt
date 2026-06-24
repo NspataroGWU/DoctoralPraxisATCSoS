@@ -1,0 +1,19 @@
+=================================================================
+H1/H2 RESULTS  (30 Monte-Carlo runs)
+=================================================================
+
+TABLE 4-1: H1 Conflict Alert Reduction
+
+  Baseline: 124.0 (SD=103.8)  min=0  max=544
+  AI:       78.9 (SD=75.0)  min=0  max=449
+  Reduction: 36.4%
+  t=3.482  p=0.0007  Cohen's d=0.50
+  H1: [PASS] SUPPORTED  (target >= 15%)
+
+TABLE 4-2: H2 Safety Metrics
+
+  TUC:  Baseline=0.1s  AI=0.1s  Red=41.7%  p=0.3384  [FAIL]
+  LoS:  Baseline=123.98  AI=78.91  Red=36.4%  p=0.0007  d=0.50  [PASS]
+  H2 OVERALL: [FAIL] NOT SUPPORTED
+
+=================================================================

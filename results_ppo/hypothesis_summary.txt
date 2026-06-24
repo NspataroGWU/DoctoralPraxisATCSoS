@@ -1,0 +1,30 @@
+======================================================================
+SPATARO PRAXIS — FULL HYPOTHESIS RESULTS
+Nicholas D. Spataro, D.Eng., 2026
+======================================================================
+
+TABLE 4-1: H1 — Conflict Alert Reduction (30 Monte-Carlo Runs)
+  Baseline: 124.0 (SD=103.8)  min=0  max=544
+  AI:       78.9 (SD=75.0)  min=0  max=449
+  Reduction: 36.4%  t=3.482  p=0.0007  Cohen's d=0.50
+  H1: [PASS] SUPPORTED  (target >= 15%)
+
+TABLE 4-2: H2 — Safety Metrics
+  TUC:  Base=0.1s  AI=0.1s  Red=41.7%  p=0.3384  [FAIL]
+  LoS:  Base=123.98  AI=78.91  Red=36.4%  p=0.0007  d=0.50  [PASS]
+
+TABLE 4-3: H3 — 3x3 Factorial Sensitivity
+  Density\Freq    FAST(1s)    MID(5s)    SLOW(10s)
+  LOW (10ac)          33.1%       23.1%        6.8% 
+  BASE (15ac)         13.5%        5.9%      -18.4% 
+  HIGH (20ac)        -31.6%       28.5%        3.2% 
+  (* p<0.05, target >= 10%)
+  Tornado: Density ±64.7pp  |  Frequency ±32.0pp
+  H3: [FAIL] NOT SUPPORTED
+
+======================================================================
+FIGURES SAVED:
+  figure_4_1_traj.png    — Chapter 4 Figure 4-1
+  figure_4_2_boxplot.png — Chapter 4 Figure 4-2 (NEW)
+  figure_4_3_tornado.png — Chapter 4 Figure 4-3
+======================================================================
