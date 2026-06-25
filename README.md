@@ -3,9 +3,6 @@
 
 **Author:** Nicholas [Last Name]  
 **Advisor:** Dr. Nila Fridley  
-**Praxis Director:** Dr. Amir Etemadi  
-**Committee Member:** Dr. Timothy Blackburn  
-**Defense Date:** July 23, 2026  
 
 ---
 
