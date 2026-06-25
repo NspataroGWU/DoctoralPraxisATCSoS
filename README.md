@@ -1,4 +1,4 @@
-# AI-Assisted Air Traffic Management in the Northeast Corridor
+# AI-Assisted Air Traffic Management 
 ### D.Eng. Praxis — George Washington University
 
 **Author:** Nicholas [Last Name]  
