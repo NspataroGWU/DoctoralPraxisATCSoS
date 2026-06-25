@@ -1,7 +1,7 @@
 # AI-Assisted Air Traffic Management 
 ### D.Eng. Praxis — George Washington University
 
-**Author:** Nicholas [Last Name]  
+**Author:** Nicholas Spataro
 **Advisor:** Dr. Nila Fridley  
 
 ---
